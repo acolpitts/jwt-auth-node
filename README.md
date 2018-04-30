@@ -14,6 +14,5 @@ JWT Authentication API with passport and mongodb.
 
 #####Depoly to Heroku
 ```
-> heroky config:set
+> heroku config:set
 MONOGOLAB_URI=mongodb://<dbuser>:<dbpassword>@ds263619.mlab.com:63619/jwt-auth-node
-```
