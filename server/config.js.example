@@ -1,4 +1,5 @@
 // example server configuration
 module.exports = {
-    secret: 'ilovepembyitisthebestlittleonehorsetownintheworld'
+  MONGO_DB: 'PATH_TO_MONGO'
+  secret: 'CHANGE_SECRET_KEY'
 }

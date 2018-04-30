@@ -6,10 +6,17 @@ const morgan = require('morgan');
 const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
-const cors = require('cors');
+const cors = require('cors')
+const config = require('./config');
+
+var env = process.env.NODE_ENV || 'dev';
+
+if (env === 'PRODUCTION') {
+  console.log('TODO:\n\tRUNNING IN PROD MODE - NEED PROD DB')
+}
 
 // DB SETUP
-mongoose.connect('mongodb://localhost/jwt-auth-api');
+mongoose.connect(config.MONGO_DB);
 
 // APP SETUP
 app.use(morgan('combined'));
