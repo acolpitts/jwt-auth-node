@@ -8,15 +8,16 @@ const router = require('./router');
 const mongoose = require('mongoose');
 const cors = require('cors')
 const config = require('./config');
+const env = process.env.NODE_ENV || 'dev';
 
-var env = process.env.NODE_ENV || 'dev';
+let DATABASE = config.MONGO_DB;
 
 if (env === 'PRODUCTION') {
-  console.log('TODO:\n\tRUNNING IN PROD MODE - NEED PROD DB')
+  DATABSE = process.env.MONGO;
 }
 
 // DB SETUP
-mongoose.connect(config.MONGO_DB);
+mongoose.connect(DATABASE);
 
 // APP SETUP
 app.use(morgan('combined'));
