@@ -6,14 +6,15 @@ const morgan = require('morgan');
 const app = express();
 const router = require('./router');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 // DB SETUP
 mongoose.connect('mongodb://localhost/jwt-auth-api');
 
 // APP SETUP
 app.use(morgan('combined'));
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' }));
-
 router(app);
 
 // SERVER SETUP
