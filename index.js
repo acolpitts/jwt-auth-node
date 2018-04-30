@@ -10,14 +10,14 @@ const cors = require('cors')
 const config = require('./config');
 const env = process.env.NODE_ENV || 'dev';
 
-let DATABASE = config.MONGO_DB;
+let mongo_uri = 'mongodb://localhost/jwt-auth-api';
 
-if (env === 'PRODUCTION') {
-  DATABSE = process.env.MONGO;
+if (process.env.MONOGOLAB_URI) {
+  mongo_uri = process.env.MONOGOLAB_URI;
 }
 
 // DB SETUP
-mongoose.connect(DATABASE);
+mongoose.connect(mongo_uri);
 
 // APP SETUP
 app.use(morgan('combined'));
