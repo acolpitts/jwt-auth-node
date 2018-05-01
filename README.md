@@ -1,7 +1,7 @@
 # JWT Authentication API
-JWT Authentication API with passport and mongodb.
+JWT Authentication API with passport and mongo
 
-#####Getting Started
+##### Getting Started
 1. Clone this repo
 1. Install dependencies
 1. Run server
@@ -12,7 +12,7 @@ JWT Authentication API with passport and mongodb.
 > npm run start
 ```
 
-#####Depoly to Heroku
+##### Depoly to Heroku
 ```
 > heroku config:set
 MONOGOLAB_URI=mongodb://<dbuser>:<dbpassword>@ds263619.mlab.com:63619/jwt-auth-node
